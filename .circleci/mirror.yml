@@ -10,7 +10,7 @@ jobs:
           command: |
             git config --global user.name 2_limit
             git config --global user.email tidhtidhdldl@naver.com
-            git remote add org https://x-access-token:${ORG_PUSH_PAT}@github.com/{IM_study_KES}/{algorithm_study_IM}.git
+            git remote add org https://x-access-token:${ORG_PUSH_PAT}@github.com/{IM_study_2_limit}/{algorithm_study_IM}.git
             git push org main --force
 workflows:
   version: 2
