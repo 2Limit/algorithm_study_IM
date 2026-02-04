@@ -9,6 +9,12 @@ jobs:
       - checkout
 
       - run:
+          name: Install rsync
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y rsync
+
+      - run:
           name: Clone study repository
           command: |
             git clone https://x-access-token:${ORG_PUSH_PAT}@github.com/SSAFY-15/BOJ_study_2_limit.git study-repo
