@@ -41,7 +41,7 @@ jobs:
             git config user.name "2_limit"
             git config user.email "tidhtidhdldl@naver.com"
 
-            git add SSAFY-15/BOJ_study_2_limit/백준
+            git add SSAFY-15/BOJ_study_2_limit
             git commit -m "Update 2_limit BOJ solutions" || echo "No changes to commit"
 
             git push
