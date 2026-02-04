@@ -24,7 +24,7 @@ jobs:
           command: |
             export LANG=C.UTF-8
 
-            TARGET_DIR="study-repo/백준"
+            TARGET_DIR="study-repo"
             mkdir -p "$TARGET_DIR"
 
             rsync -av ./ "$TARGET_DIR" \
