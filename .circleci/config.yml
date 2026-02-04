@@ -24,7 +24,7 @@ jobs:
           command: |
             export LANG=C.UTF-8
 
-            TARGET_DIR="study-repo"
+            TARGET_DIR="study-repo/백준"
             mkdir -p "$TARGET_DIR"
 
             rsync -av ./ "$TARGET_DIR" \
@@ -41,7 +41,7 @@ jobs:
             git config user.name "2_limit"
             git config user.email "tidhtidhdldl@naver.com"
 
-            git add SSAFY-15/BOJ_study_2_limit
+            git add 백
             git commit -m "Update 2_limit BOJ solutions" || echo "No changes to commit"
 
             git push
