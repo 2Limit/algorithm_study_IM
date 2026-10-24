@@ -2,6 +2,11 @@ import heapq
 
 def solution(N, road, K):
     answer = 0
+    graph = [[] for _ in range(N + 1)]
+    
+    for s,e,w in road:
+        graph[s].append((e,w))
+        graph[e].append((s,w))
     
     
     def dijk(s):
@@ -12,22 +17,19 @@ def solution(N, road, K):
         
         while q:
             cost, node = heapq.heappop(q)
-
-            for s_node,e_node,w in road:
-                if s_node == node or e_node == node:
-                    new_cost = cost+w
-                    if new_cost < dist[e_node]:
-                        dist[e_node]=new_cost
-                        heapq.heappush(q,(new_cost,e_node))
-                    if new_cost < dist[s_node]:
-                        dist[s_node]=new_cost
-                        heapq.heappush(q,(new_cost,s_node))
+                
+            if cost > dist[node]:
+                continue
+            for e_node,w in graph[node]:
+                new_cost = cost+w
+                if new_cost < dist[e_node]:
+                    dist[e_node]=new_cost
+                    heapq.heappush(q,(new_cost,e_node))
+            
         return dist                    
     
     dist = dijk(1)
-    
     for d in dist:
-        if d <=K:
+        if d<=K:
             answer+=1
-    print(dist)
     return answer
